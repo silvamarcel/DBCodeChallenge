@@ -1,29 +1,15 @@
-var express = require('express');
-var mongoose = require('mongoose');
+'use strict';
 
-var db = mongoose.connect('mongodb://localhost/dbAPI');
-var Restaurant = require('./models/restaurantModel');
+var logger  = require('mm-node-logger')(module);
+var pkg     = require('./package.json');
+var config  = require('./src/config/config');
+var express = require('./src/config/express');
+var mongodb = require('./src/config/mongoose');
 
-var app = express();
-var port = process.env.PORT || 3000;
-var appRouter = express.Router();
+mongodb(function startServer() {
+    var app = express.init();
 
-appRouter.route('/restaurants')
-    .get(function(req, res) {
-        Restaurant.find(function(err, restaurants) {
-            if (err) {
-                res.status(500).send(err);
-                console.log(err);
-            } else {
-                res.json(restaurants);
-            }
-        });
+    app.listen(config.server.port, function () {
+        logger.info('App is running');
     });
-
-app.use('/api', appRouter);
-app.get('/', function(req, res) {
-    res.send('Welcome to my API');
-});
-app.listen(port, function() {
-    console.log('Gulp is running my app on PORT: ' + port);
 });
