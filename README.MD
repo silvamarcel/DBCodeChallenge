@@ -8,6 +8,7 @@
 * Git - https://git-scm.com/download/win;
 * Atom - https://atom.io/download/windows_x64 or your prefered IDE;
 * MongoDB - https://www.mongodb.com/download-center?jmp=nav#community;
+* Redis - https://redis.io/download (OS X) or https://github.com/MSOpenTech/redis/releases (Windows)
 
 ####################
 ### Server side: ###
@@ -21,8 +22,9 @@
 
 ## Running the server application ##
 
-* In your terminal, go to the MongoDB installation folder and Run "mongod.exe" (Windows) or "mongod" (OS X);
-* In another terminal, go to the Server folder of the application and Run "gulp" to start the server;
+* Firstly, in your terminal, go to the MongoDB installation folder and Run "mongod.exe" (Windows) or "mongod" (OS X);
+* Secondly other terminal, go to the Redis installation folder and Run "" (Windows) or "" (OS X);
+* Finally, in another terminal, go to the Server folder of the application and Run "gulp" to start the server;
 
 
 ####################
