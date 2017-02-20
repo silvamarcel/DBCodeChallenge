@@ -1,0 +1,28 @@
+{
+  "name": "dbserver",
+  "version": "1.0.0",
+  "description": "DB Code Challenge Server with nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvamarcel/DBCodeChallenge.git"
+  },
+  "keywords": [
+    "DBCodeChallenge"
+  ],
+  "author": "Marcel de Jesus Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silvamarcel/DBCodeChallenge/issues"
+  },
+  "homepage": "https://github.com/silvamarcel/DBCodeChallenge#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "mongoose": "^4.8.4"
+  }
+}
