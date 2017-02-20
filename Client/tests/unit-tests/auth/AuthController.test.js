@@ -42,7 +42,8 @@ describe('AuthCtrl', function() {
 
     describe('#login', function() {
         beforeEach(function() {
-            authCtrl.login(user);
+            authCtrl.user = user;
+            authCtrl.login();
         });
         it('should call ApiService post', function() {
             expect(ApiServiceMock.post).toHaveBeenCalledWith('/auth/login', user);

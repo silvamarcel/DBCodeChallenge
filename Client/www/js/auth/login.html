@@ -1,0 +1,24 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+	<ion-content>
+		<div class="row row-center">
+			<div class="col col-center">
+				<div>
+					<p>DB Code Challenge</p>
+				</div>
+				<form ng-submit="loginCtrl.login()" name="loginForm">
+					<div class="list list-inset">
+						<label class="item item-input">
+							<input type="text" name="username" ng-model="loginCtrl.user.username" placeholder="Username" required="">
+						</label>
+						<label class="item item-input">
+							<input type="password" name="password" ng-model="loginCtrl.user.password" placeholder="Password" required="">
+						</label>
+					</div>
+					<div class="list list-inset transparent">
+						<button class="button button-block button-default" type="submit" ng-disabled="loginForm.$invalid">Log In</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

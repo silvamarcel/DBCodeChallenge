@@ -20,6 +20,14 @@ angular.module('dbCodeChallenge', ['ionic', 'api.module', 'message.module', 'aut
 
     $stateProvider
 
+    //Authentication
+	.state('login', {
+		url: '/login',
+		templateUrl: 'js/auth/login.html',
+		controller: 'AuthCtrl',
+		controllerAs: 'loginCtrl'
+	})
+
     // setup an abstract state for the tabs directive
     .state('tab', {
         url: '/tab',
@@ -64,5 +72,5 @@ angular.module('dbCodeChallenge', ['ionic', 'api.module', 'message.module', 'aut
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/restaurants');
+    $urlRouterProvider.otherwise('login');
 });

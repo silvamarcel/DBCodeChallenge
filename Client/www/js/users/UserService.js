@@ -1,4 +1,5 @@
-angular.module('user.module').service('UserService', ['$http', 'ApiService', function($http, ApiService) {
+angular.module('user.module').service('UserService', ['ApiService', function(ApiService) {
+
     var self = this;
 
     //Return a promise with a logged user if is logged, otherwise will return an exception with status and message.

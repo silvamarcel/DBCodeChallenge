@@ -6,6 +6,7 @@ describe('RestaurantCtrl', function() {
     var RestaurantServiceMock;
     var MessageServiceMock;
     var VoteServiceMock;
+    var AuthServiceMock;
     var locationMock;
     var restaurantCtrl;
     var errorResult = 'Error message';

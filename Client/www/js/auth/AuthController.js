@@ -1,9 +1,14 @@
 angular.module('auth.module').controller('AuthCtrl', ['$state', 'ApiService', 'MessageService', function($state, ApiService, MessageService) {
+
     var ctrl = this;
+    ctrl.user = {
+        username: null,
+        password: null
+    };
 
     // Do the login to identify the user and not allow multiple votes
-    ctrl.login = function(user) {
-        ApiService.post('/auth/login', user).then(function(loggedUser){
+    ctrl.login = function() {
+        ApiService.post('/auth/login', ctrl.user).then(function(loggedUser){
             $state.go('restaurants');
         }).catch(ctrl.authError);
 	};
