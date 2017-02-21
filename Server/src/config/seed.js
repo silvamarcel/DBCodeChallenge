@@ -94,7 +94,6 @@ User.find({}).remove(function() {
             _id: mongoose.Types.ObjectId(),
             provider: 'local',
             name: 'User ' + i,
-            username: 'user' + i,
             password: 'user' + i,
             email: 'user' + i + '@dbserver.com.br'
         });

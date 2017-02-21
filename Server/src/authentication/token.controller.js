@@ -29,7 +29,7 @@ function createToken(payload, cb) {
     if(payload != null && typeof payload !== 'object') { return cb(new Error('payload is not an Object')) }
     if(ttl != null && typeof ttl !== 'number') { return cb(new Error('ttl is not a valid Number')) }
 
-    var token = jwt.sign(payload, config.token.secret, { expiresInMinutes: config.token.expiration });
+    var token = jwt.sign(payload, config.token.secret, { expiresIn: config.token.expiration });
 
     // stores a token with payload data for a ttl period of time
     redis.setex(token, ttl, JSON.stringify(payload), function(token, err, reply) {
