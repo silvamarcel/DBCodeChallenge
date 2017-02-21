@@ -1,1 +1,1 @@
-angular.module('user.module', ['api.module']);
+angular.module('user.module', ['auth.module']);

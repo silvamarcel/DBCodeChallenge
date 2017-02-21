@@ -1,9 +1,6 @@
 <ion-view view-title="User Account">
     <ion-content class="padding">
-        <img ng-src="{{user.urlImage}}" style="width: 64px; height: 64px">
         <p>Name: {{user.name}}</p>
-        <p>Age: {{user.age}}</p>
-        <p>Username: {{user.username}}</p>
         <p>E-mail: {{user.email}}</p>
         <button class="button button-stable" ng-controller="AuthCtrl as authCtrl" ng-click="authCtrl.logout()">Logout</button>
     </ion-content>

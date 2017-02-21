@@ -1,1 +1,1 @@
-angular.module('vote.module', ['api.module']);
+angular.module('vote.module', ['restangular']);

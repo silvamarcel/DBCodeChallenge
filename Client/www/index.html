@@ -11,8 +11,9 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- ionic-toast -->
+    <script src="lib/lodash/dist/lodash.js"></script>
+    <script src="lib/restangular/dist/restangular.min.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="lib/ionic-toast/dist/ionic-toast.bundle.min.js"></script>
     <script src="lib/moment/moment.js"></script>
 
@@ -22,17 +23,20 @@
     <!-- application js -->
     <script src="js/app.js"></script>
 
-    <script src="js/api/ApiModule.js"></script>
-    <script src="js/api/ApiService.js"></script>
+    <!-- third part js -->
+    <script src="js/auth/AuthModule.js"></script>
+    <script src="js/auth/Base64Service.js"></script>
+    <script src="js/auth/InterceptorService.js"></script>
+    <script src="js/auth/TokenService.js"></script>
+    <script src="js/auth/Authentication.js"></script>
 
+    <!-- application js -->
     <script src="js/messages/MessageModule.js"></script>
     <script src="js/messages/MessageService.js"></script>
 
-    <script src="js/auth/AuthModule.js"></script>
     <script src="js/auth/AuthController.js"></script>
 
     <script src="js/users/UserModule.js"></script>
-    <script src="js/users/UserService.js"></script>
     <script src="js/users/UserController.js"></script>
 
     <script src="js/restaurants/RestaurantModule.js"></script>

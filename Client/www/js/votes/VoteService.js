@@ -1,4 +1,4 @@
-angular.module('vote.module').service('VoteService', ['ApiService', function(ApiService) {
+angular.module('vote.module').service('VoteService', ['Restangular', function(Restangular) {
     var self = this;
 
     //Return a promise with the list of available restaurants.

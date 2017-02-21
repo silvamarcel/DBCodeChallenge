@@ -1,4 +1,4 @@
-angular.module('user.module').controller('UserCtrl', ['$scope', 'UserService', 'MessageService', function($scope, UserService, MessageService) {
+angular.module('user.module').controller('UserCtrl', ['$scope', 'Authentication', function($scope, Authentication) {
 
     var ctrl = this;
 
@@ -13,10 +13,6 @@ angular.module('user.module').controller('UserCtrl', ['$scope', 'UserService', '
 	});
 
     ctrl.getUser = function() {
-        UserService.getLoggedUser().then(function(user) {
-            $scope.user = user;
-		}).catch(function(error) {
-			MessageService.throwError(error);
-		});
+        $scope.user = Authentication.getCurrentUser()._doc;
     };
 }]);

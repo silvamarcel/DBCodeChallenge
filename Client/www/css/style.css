@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+
+.login {
+	/*background: url('../img/bg-login.jpg') no-repeat center center fixed; Uncoment to set an image as background */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+.login .scroll-content {
+	display: table !important;
+	width: 100% !important;
+	height: 100% !important;
+	margin-top: -50px;
+	text-align: center;
+}

@@ -1,1 +1,1 @@
-angular.module('auth.module', ['api.module', 'message.module']);
+angular.module('auth.module', ['restangular', 'message.module']);

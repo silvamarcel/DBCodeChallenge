@@ -1,1 +1,1 @@
-angular.module('restaurant.module', ['api.module', 'message.module', 'auth.module']);
+angular.module('restaurant.module', ['restangular', 'message.module', 'auth.module']);

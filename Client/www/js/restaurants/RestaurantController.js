@@ -1,16 +1,7 @@
-angular.module('restaurant.module').controller('RestaurantCtrl', ['$scope', '$location', 'RestaurantService', 'MessageService', 'UserService', 'VoteService', function($scope, $location, RestaurantService, MessageService, UserService, VoteService) {
+angular.module('restaurant.module').controller('RestaurantCtrl', ['$scope', '$location', 'RestaurantService', 'MessageService', 'VoteService', function($scope, $location, RestaurantService, MessageService, VoteService) {
 
     var ctrl = this;
     $scope.restaurants = [];
-
-    $scope.$on('$ionicView.enter', function(e) {
-        UserService.getLoggedUser().then(function(user) {
-            $scope.user = user;
-		}).catch(function(error) {
-			MessageService.throwError(error);
-            $location.path("login");
-		});
-	});
 
     ctrl.goDetail = function(restaurantId) {
         $location.path("tab/restaurants/" + restaurantId);
