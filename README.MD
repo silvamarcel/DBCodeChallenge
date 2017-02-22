@@ -14,7 +14,7 @@
 
 ## Installing Server dependencies ##
 
-* Run "npm install -g gulp";
+* In your terminal/CMD, Run "npm install -g gulp";
 * Follow the instructions of https://docs.mongodb.com/manual/installation/ to install MongoDB in your own environment
 * Remember you need to create the default folder before start MongoDB. The folder should be created in "C:/data/db" (Windows) or "/data/db" (OS X)
 * Run "npm install" inside the server project folder;
@@ -36,7 +36,9 @@
 * Run "npm install -g karma-cli";
 * Run "npm install -g phantomjs";
 * Run "npm install -g cordova ionic";
+* Run "npm install -g bower";
 * Run "npm install" inside the client project folder;
+* Run "bower install" inside the client project folder;
 
 ## Running the client application ##
 
