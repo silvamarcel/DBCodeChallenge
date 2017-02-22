@@ -69,7 +69,7 @@ describe('AuthCtrl', function() {
             });
 
             it('if unsuccessful, should call throwError from MessageService and go to login page', function() {
-                defferedLogin.reject({data: 'Error message'});
+                defferedLogin.reject('Error message');
                 $rootScope.$digest();
                 expect(MessageServiceMock.throwError).toHaveBeenCalledWith('Error message');
                 expect(StateMock.go).toHaveBeenCalledWith('login');
@@ -93,7 +93,7 @@ describe('AuthCtrl', function() {
             });
 
             it('if unsuccessful, should call throwError from MessageService and go to login page', function() {
-                defferedLogout.reject({data: 'Error message'});
+                defferedLogout.reject('Error message');
                 $rootScope.$digest();
                 expect(MessageServiceMock.throwError).toHaveBeenCalledWith('Error message');
                 expect(StateMock.go).toHaveBeenCalledWith('login');
@@ -120,7 +120,7 @@ describe('AuthCtrl', function() {
             });
 
             it('if unsuccessful, should call throwError from MessageService and go to login page', function() {
-                defferedSignup.reject({data: 'Error message'});
+                defferedSignup.reject('Error message');
                 $rootScope.$digest();
                 expect(MessageServiceMock.throwError).toHaveBeenCalledWith('Error message');
                 expect(StateMock.go).toHaveBeenCalledWith('login');

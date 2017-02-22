@@ -33,9 +33,7 @@ angular.module('auth.module').controller('AuthCtrl', ['$rootScope', '$state', 'A
     };
 
     ctrl.authError = function(error) {
-        if (error && error.data) {
-            MessageService.throwError(error.data);
-        }
+        MessageService.throwError(error);
         $state.go('login');
     };
 

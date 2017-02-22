@@ -3,6 +3,10 @@ angular.module('restaurant.module').controller('RestaurantCtrl', ['$scope', '$lo
     var ctrl = this;
     $scope.restaurants = [];
 
+    $scope.$on('$ionicView.enter', function(e) {
+        ctrl.getRestaurants();
+    });
+
     ctrl.goDetail = function(restaurantId) {
         $location.path("tab/restaurants/" + restaurantId);
     }
@@ -24,17 +28,9 @@ angular.module('restaurant.module').controller('RestaurantCtrl', ['$scope', '$lo
 
     ctrl.vote = function(restaurantId) {
         VoteService.vote(restaurantId).then(function(message) {
-            $scope.restaurants.map(function(restaurant) {
-                restaurant.isVoted = restaurant.id == restaurantId;
-            });
+            //Update the list of restaurants
+            ctrl.getRestaurants();
             MessageService.success(message);
 		}).catch(MessageService.throwError);
     };
-
-    //TODO Need the server side implementation
-    // ctrl.cancelVote = function(restaurantId) {
-    //     VoteService.cancelVote(restaurantId).then(function(message) {
-    //         MessageService.success(message);
-	// 	}).catch(MessageService.throwError);
-    // };
 }]);

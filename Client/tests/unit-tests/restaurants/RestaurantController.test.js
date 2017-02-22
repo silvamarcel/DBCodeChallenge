@@ -119,6 +119,7 @@ describe('RestaurantCtrl', function() {
                 defferedVote.resolve();
                 $rootScope.$digest();
                 expect(VoteServiceMock.vote).toHaveBeenCalledWith(id);
+                expect(RestaurantServiceMock.getRestaurants).toHaveBeenCalled();
                 expect(MessageServiceMock.success).toHaveBeenCalled();
             });
 
@@ -130,7 +131,7 @@ describe('RestaurantCtrl', function() {
         });
     });
 
-    //TODO Commented because the method was disabled 
+    //TODO Commented because the method was disabled
     // describe('#cancelVote', function() {
     //     beforeEach(function() {
     //         id = 1;
