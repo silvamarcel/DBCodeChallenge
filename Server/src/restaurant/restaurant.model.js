@@ -1,24 +1,26 @@
 var mongoose = require('mongoose');
+var User = require('../user/user.model');
 var Schema = mongoose.Schema;
-
-var validateLocalStrategyProperty = function(property) {
-    return ((this.provider !== 'local' && !this.updated) || property.length);
-};
 
 var restaurantModel = new Schema({
     id: Number,
-    name: {
-        type: String,
-        trim: true,
-        validate: [validateLocalStrategyProperty, 'Please fill in the restaurant name']
-    },
+    name: String,
     cousine: String,
-    numberOfVotes: Number,
     isVoted: {
         type: Boolean,
-        default:false
+        default: false
     },
-    votes: [String],
+    votes: [{
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        userName: String,
+        votedAt: {
+            type: Date,
+            default: Date.now
+        }
+    }],
     urlImage: {type: String}
 });
 
