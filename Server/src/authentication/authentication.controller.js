@@ -7,7 +7,7 @@ var User     = require('../user/user.model.js');
 function signin(req, res, next) {
     passport.authenticate('local', function (err, user, info) {
         var error = err || info;
-        if (error) return res.status(401).send(error);
+        if (error) return res.status(401).send(error.message);
 
         // Remove sensitive data before login
         user.password = undefined;
@@ -15,10 +15,9 @@ function signin(req, res, next) {
 
         token.createToken(user, function(res, err, token) {
             if(err) {
-                logger.error(err);
-                return res.status(400).send(err);
+                logger.error(err.message);
+                return res.status(400).send(err.message);
             }
-
             res.status(201).json({token: token});
         }.bind(null, res));
     })(req, res, next)
@@ -56,7 +55,7 @@ function signup(req, res) {
     user.save(function(err, user) {
         if (err) {
             logger.error(err.message);
-            return res.status(400).send(err);
+            return res.status(400).send(err.message);
         } else {
             // Remove sensitive data before login
             user.password = undefined;
@@ -65,7 +64,7 @@ function signup(req, res) {
             token.createToken(user, function(res, err, token) {
                 if (err) {
                     logger.error(err.message);
-                    return res.status(400).send(err);
+                    return res.status(400).send(err.message);
                 }
                 res.status(201).json({token: token});
             }.bind(null, res));
