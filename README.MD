@@ -49,6 +49,15 @@
 * Run "gulp test"; (Single execution)
 * Run "karma start tests/unit-tests.conf.js"; (With watcher)
 
+## Observations ##
+
+* There are 5 users for tests, but you can create another one if you wish. The users are: 
+* Email: user1@dbserver.com.br | Pass: user1
+* Email: user2@dbserver.com.br | Pass: user2
+* Email: user3@dbserver.com.br | Pass: user3
+* Email: user4@dbserver.com.br | Pass: user4
+* Email: user5@dbserver.com.br | Pass: user5
+
 # Highlights: #
 
 * The client was created in a TDD style with automated tests, however, they were built only with unit tests and don't cover all Stories because some rules were implemented only in the server.
