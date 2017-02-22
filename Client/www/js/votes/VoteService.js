@@ -3,9 +3,7 @@ angular.module('vote.module').service('VoteService', ['Restangular', function(Re
 
     //Return a promise with the list of available restaurants.
     this.vote = function(restaurantId) {
-		return ApiService.post('/vote', {
-            restaurantId: restaurantId
-        });
+        return Restangular.all('/restaurants/' + restaurantId + '/vote').post();
 	};
 
     this.cancelVote = function(restaurantId) {

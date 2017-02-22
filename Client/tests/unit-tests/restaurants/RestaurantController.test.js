@@ -130,26 +130,27 @@ describe('RestaurantCtrl', function() {
         });
     });
 
-    describe('#cancelVote', function() {
-        beforeEach(function() {
-            id = 1;
-            scope.restaurants = successResult;
-            restaurantCtrl.cancelVote(id);
-        });
-
-        describe('is executed', function() {
-            it('if successful, should call VoteService and show success', function() {
-                defferedCancelVote.resolve();
-                $rootScope.$digest();
-                expect(VoteServiceMock.cancelVote).toHaveBeenCalledWith(id);
-                expect(MessageServiceMock.success).toHaveBeenCalled();
-            });
-
-            it('if unsuccessful, should call throwError from MessageService', function() {
-                defferedCancelVote.reject(errorResult);
-                $rootScope.$digest();
-                expect(MessageServiceMock.throwError).toHaveBeenCalledWith(errorResult);
-            });
-        });
-    });
+    //TODO Commented because the method was disabled 
+    // describe('#cancelVote', function() {
+    //     beforeEach(function() {
+    //         id = 1;
+    //         scope.restaurants = successResult;
+    //         restaurantCtrl.cancelVote(id);
+    //     });
+    //
+    //     describe('is executed', function() {
+    //         it('if successful, should call VoteService and show success', function() {
+    //             defferedCancelVote.resolve();
+    //             $rootScope.$digest();
+    //             expect(VoteServiceMock.cancelVote).toHaveBeenCalledWith(id);
+    //             expect(MessageServiceMock.success).toHaveBeenCalled();
+    //         });
+    //
+    //         it('if unsuccessful, should call throwError from MessageService', function() {
+    //             defferedCancelVote.reject(errorResult);
+    //             $rootScope.$digest();
+    //             expect(MessageServiceMock.throwError).toHaveBeenCalledWith(errorResult);
+    //         });
+    //     });
+    // });
 });

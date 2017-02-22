@@ -10,12 +10,13 @@
                 <img ng-src="{{restaurant.urlImage}}">
                 <h2>Name: {{restaurant.name}}</h2>
                 <p>Cousine: {{restaurant.cousine}}</p>
-                <p># of Votes: {{restaurant.numberOfVotes}}</p>
-                <p>Voted by:
-                    <h6><span ng-repeat="name in restaurant.votes"> | {{name}}</span> |</h6>
-                </p>
+                <p>Votes: {{restaurant.votes.length}}</p>
+                <div ng-show="restaurant.votes.length > 0">
+                    <p>Voted by:
+                        <h6><span ng-repeat="vote in restaurant.votes"> | {{vote.userName}}</span> | </h6>
+                    </p>
+                </div>
                 <div class="buttons">
-                    <button class="button button-assertive" ng-show="restaurant.isVoted" ng-click="ctrl.cancelVote(restaurant.id)">Cancel the vote</button>
                     <button class="button button-positive" ng-hide="ctrl.hasVote()" ng-click="ctrl.vote(restaurant.id)">Vote</button>
                     <button class="button button-positive" ng-click="ctrl.goDetail(restaurant.id)">Detail</button>
                 </div>

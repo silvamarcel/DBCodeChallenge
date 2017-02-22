@@ -23,14 +23,18 @@ angular.module('restaurant.module').controller('RestaurantCtrl', ['$scope', '$lo
     };
 
     ctrl.vote = function(restaurantId) {
-        VoteService.vote(restaurantId).then(function() {
-            MessageService.success('Your vote was added!');
+        VoteService.vote(restaurantId).then(function(message) {
+            $scope.restaurants.map(function(restaurant) {
+                restaurant.isVoted = restaurant.id == restaurantId;
+            });
+            MessageService.success(message);
 		}).catch(MessageService.throwError);
     };
 
-    ctrl.cancelVote = function(restaurantId) {
-        VoteService.cancelVote(restaurantId).then(function() {
-            MessageService.success('Your vote was canceled!');
-		}).catch(MessageService.throwError);
-    };
+    //TODO Need the server side implementation
+    // ctrl.cancelVote = function(restaurantId) {
+    //     VoteService.cancelVote(restaurantId).then(function(message) {
+    //         MessageService.success(message);
+	// 	}).catch(MessageService.throwError);
+    // };
 }]);

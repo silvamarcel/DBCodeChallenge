@@ -2,7 +2,7 @@ angular.module('message.module').service('MessageService', ['ionicToast', functi
     var self = this;
 
     this.throwError = function(error) {
-        self.showMessage(error);
+        self.showMessage(error.data);
     };
 
     this.success = function(successMessage) {
