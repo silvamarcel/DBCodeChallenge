@@ -1,6 +1,6 @@
 ### General information: ###
 
-* The fact of interface isn't required I used ionic to build a basic interface (without effort) and to use node as library manager.
+* The interface wasn't required, so I used ionic to build a basic interface.
 
 ## Required configuration: ##
 
