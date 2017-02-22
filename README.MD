@@ -1,4 +1,4 @@
-### General information: ###
+# General information: #
 
 * The interface wasn't required, so I used ionic to build a basic interface.
 
@@ -10,9 +10,7 @@
 * MongoDB - https://www.mongodb.com/download-center?jmp=nav#community;
 * Redis - https://redis.io/download (OS X) or https://github.com/MSOpenTech/redis/releases (Windows)
 
-####################
-### Server side: ###
-####################
+# Server side: #
 
 ## Installing Server dependencies ##
 
@@ -30,9 +28,8 @@
 
 * Inside the file "src/config/config.js" in the begining of the file, there is a configuration called "config.seedDB", this config, if setted to "true" is responsible for clean and input default values in the MongoDB every time the server was initialized. If you want persist the data, set this config to "false";
 
-####################
-### Client side: ###
-####################
+
+# Client side: #
 
 ## Installing Client dependencies ##
 
@@ -50,21 +47,15 @@
 * Run "gulp test"; (Single execution)
 * Run "karma start tests/unit-tests.conf.js"; (With watcher)
 
-####################
-### Highlights:  ###
-####################
+# Highlights: #
 
 * The client was created in a TDD style with automated tests, however, they were built only with unit tests and don't cover all Stories because some rules were implemented only in the server.
 
-#####################
-### Improvements: ###
-#####################
+# Improvements: #
 
 * Creation of tests for the server side;
 * Use of cache for data which doesn't change frequently;
 
-######################
-### Relevant Info: ###
-######################
+# Relevant Info: #
 
 * I never worked with node.js and for the code challenge I follow a tutorial and I used some codes from it, however, I just used the authentication codes and I did some changes to adapt these codes for this application.
