@@ -69,4 +69,4 @@
 
 # Relevant Info: #
 
-* I never worked with node.js and for the code challenge I follow a tutorial and I used some codes from it, however, I just used the authentication codes and I did some changes to adapt these codes for this application.
+* I've never worked with node.js and for the code challenge I follow a tutorial and I used some codes from it, however, I just used the authentication codes and I did some changes to adapt these codes for this application.
